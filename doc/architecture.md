@@ -1,7 +1,7 @@
 # Architecture
 
 ```diagram
-SlateJSEditor <-> RematchStore <-> SoLiDSyncer
+SlateJSEditor <-> RematchStore <-> SoLiDSyncer <-> SoLiD POD <-> OrganizerService
                                <-  SWFetcher
 ```
 
