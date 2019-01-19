@@ -1,8 +1,7 @@
 # Architecture
 
 ```diagram
-SlateJSEditor <-> RematchStore <-> SoLiDSyncer <-> SoLiD POD <-> OrganizerService
-                               <-  SWFetcher
+SlateJSEditor <-> RematchStore <-> SoLiDSyncer <-> SoLiD POD <-> Service
 ```
 
 ## SoLiDSyncer
@@ -21,8 +20,16 @@ Load current markdown from RematchStore.
 
 If there is an [embedding link](../README.md#Embedding), link content will be load from the RematchStore asynchronously.
 
-## SWFetcher
+## SoLiD POD
 
-Loading content from other site will encounter CORS issue, because browser is trying to prevent things like a vicious site embedding a bank site and cheating user.
+Files and their metadata are stored on your SoLiD POD, following LDP specification.
 
-But this can be bypassed utilizing service worker.
+Some example is [here](./files.md).
+
+## Service
+
+SoLiD POD only provides storage, so hard jobs like searching and NLP parsing can only be done in third party Services.
+
+Services have their WebID, if you want to use a service, you should [trust it in ACL](https://github.com/solid/web-access-control-spec#other-ideas-about-specifying-trusted-apps).
+
+Services use [solid-auth-cli](https://github.com/jeff-zucker/solid-auth-cli) to login their WebID, and act as semantic web agent on the server-side.
