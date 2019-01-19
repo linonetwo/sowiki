@@ -12,7 +12,7 @@ If this file is a proper markdown, then it will be download to the RematchStore.
 
 ## RematchStore
 
-There is a hash map in the store, caching all URI - content pair that user had requested. If there is a cache miss, RematchStore will call SoLiDSyncer to load the content.
+There is a hash map in the store, caching all URI-content-pair that user had requested. If there is a cache miss, RematchStore will call SoLiDSyncer to load the content.
 
 ## SlateJSEditor
 
